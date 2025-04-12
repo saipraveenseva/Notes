@@ -1,0 +1,117 @@
+Great — here's a detailed yet concise set of notes on **Selenium WebDriver Features** for interview prep:
+
+---
+
+### ✅ **Selenium WebDriver Features**
+
+Selenium WebDriver is a core component of the Selenium suite designed for automating web application testing. It offers robust control over browser automation and supports a wide range of features:
+
+---
+
+#### 1. **Cross-Browser Testing**
+Selenium WebDriver supports major browsers:
+- Chrome
+- Firefox
+- Edge
+- Safari
+- Internet Explorer (limited support)
+
+Each browser has its own driver (e.g., `chromedriver`, `geckodriver`).
+
+```java
+WebDriver driver = new ChromeDriver();
+```
+
+---
+
+#### 2. **Multiple Language Support**
+Tests can be written in:
+- Java
+- Python
+- C#
+- Ruby
+- JavaScript (Node.js)
+- Kotlin (via WebDriver bindings)
+
+This enables teams to use the language they’re most comfortable with.
+
+---
+
+#### 3. **Real-Time Browser Interaction**
+WebDriver directly communicates with the browser without a server in between (unlike Selenium RC), offering faster execution and native behavior.
+
+- Can simulate user actions: click, type, scroll, drag-and-drop, etc.
+- Works on the browser level, not just the HTML DOM.
+
+---
+
+#### 4. **Support for Dynamic Web Elements**
+Handles JavaScript-heavy and AJAX-based applications effectively with:
+- Explicit and Fluent Waits
+- Advanced locators (XPath, CSS, etc.)
+
+```java
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login")));
+```
+
+---
+
+#### 5. **Platform Independent**
+Can be executed on Windows, macOS, Linux.
+Test scripts are portable across platforms and browsers.
+
+---
+
+#### 6. **Headless Browser Testing**
+Supports headless execution via drivers like:
+- Headless Chrome
+- Firefox Headless
+
+This is useful for CI environments where GUI is not required.
+
+```java
+ChromeOptions options = new ChromeOptions();
+options.addArguments("--headless");
+WebDriver driver = new ChromeDriver(options);
+```
+
+---
+
+#### 7. **Integration with Tools and Frameworks**
+Seamlessly integrates with:
+- TestNG / JUnit for test structure
+- Maven / Gradle for dependency management
+- Jenkins for CI/CD
+- Allure / Extent Reports for reporting
+- Docker / Selenium Grid for parallel and distributed testing
+
+---
+
+#### 8. **Screenshot Capture**
+Essential for debugging and reporting purposes.
+
+```java
+File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+```
+
+---
+
+#### 9. **Window and Frame Handling**
+Handles:
+- Multiple browser windows/tabs
+- Alerts and popups
+- Frames and iframes
+
+```java
+driver.switchTo().frame("frameName");
+```
+
+---
+
+#### 10. **Open Source and Actively Maintained**
+No licensing costs, with a large community and frequent updates via Selenium HQ.
+
+---
+
+Let me know your next topic — I’ll keep the same format.
